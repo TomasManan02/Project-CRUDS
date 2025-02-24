@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link style CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Icon => Page -->
+    <link rel="Icon" href="mysql.png">
+    <!-- title Page -->
+    <title>CRUDS</title>
+</head>
+<body>
+    <div class="cruds">
+        <!-- head -->
+        <div class="head">
+            
+            <div>
+                <h2>CRUDS</h2>
+            <p>PRODUCT MANAGEMENT SYSTEM</p>
+            </div>
+
+        </div>
+
+        <!-- inputs -->
+        <div class="inputs">
+            <input type="text" id="title" placeholder="title">
+            <div class="price">
+                <input onkeyup="getTotal()" id="price" placeholder="price" type="number">
+                <input onkeyup="getTotal()" id="taxes" placeholder="taxes" type="number">
+                <input onkeyup="getTotal()" id="ads" placeholder="ads" type="number"> 
+                <input onkeyup="getTotal()" id="discount" placeholder="discount" type="number"> 
+                <small id="total"></small>
+            </div>
+            <input type="number" id="count" placeholder="count">
+            <input type="text" list="dataOption" id="category" placeholder="category">
+           <!-- datalist => options in category -->
+            <datalist id="dataOption">
+                <option value="phone"></option>
+                <option value="Tablet"></option>
+                <option value="headphones"></option>
+                <option value="PC"></option>
+            </datalist>
+            <button id="submit">create</button>
+        </div>
+
+        <div class="outputs">
+            <div class="searchBlock">
+                <input onkeyup="searchData(this.value)" type="text" id="search" placeholder="search">
+                <div class="btnSearch">
+                    <button onclick="getSearchMood(this.id)" id="searchTitle">Search By Title</button>
+                    <button onclick="getSearchMood(this.id)" id="searchCategory">Search By Category</button>
+                </div>
+            </div>
+
+            <div id="deleteAll">
+
+            </div>
+
+            <table>
+                <tr>
+                    <th>id</th>
+                    <th>title</th>
+                    <th>price</th>
+                    <th>taxes</th>
+                    <th>ads</th>
+                    <th>discount</th>
+                    <th>total</th>
+                    <th>category</th>
+                    <th>update</th>
+                    <th>delete</th>
+                </tr>
+
+                <tbody id="tbody">
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>
